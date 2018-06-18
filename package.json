@@ -1,0 +1,56 @@
+{
+  "name": "typescript-koa-starter",
+  "version": "0.1.0",
+  "description": "TypeScript Koa Starter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ukita/typescript-koa-starter"
+  },
+  "author": "Bruno Ukita <brunoukita@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/bin/server.js",
+    "start:dev": "nodemon dist/bin/server.js",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "test": "jest --coverage --verbose",
+    "test:watch": "yarn test --watch",
+    "lint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.1",
+    "bluebird": "^3.5.1",
+    "dotenv": "^6.0.0",
+    "koa": "^2.5.1",
+    "koa-body": "^4.0.3",
+    "koa-compose": "^4.1.0",
+    "koa-compress": "^3.0.0",
+    "koa-pino-logger": "^2.1.3",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.1.5"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.20",
+    "@types/dotenv": "^4.0.3",
+    "@types/formidable": "^1.0.31",
+    "@types/jest": "^23.1.0",
+    "@types/koa-compose": "^3.2.2",
+    "@types/koa-compress": "^2.0.8",
+    "@types/koa-pino-logger": "^2.1.1",
+    "@types/koa-router": "^7.0.28",
+    "@types/koa__cors": "^2.2.2",
+    "@types/lodash": "^4.14.109",
+    "@types/mongoose": "^5.0.16",
+    "@types/supertest": "^2.0.4",
+    "jest": "^23.1.0",
+    "mongodb-memory-server": "^1.8.0",
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0",
+    "ts-jest": "^22.4.6",
+    "ts-node": "^6.1.1",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.9.2"
+  }
+}
