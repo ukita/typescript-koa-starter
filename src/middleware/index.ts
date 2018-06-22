@@ -7,6 +7,12 @@ import cors from '@koa/cors'
 
 import { app } from '../config'
 
-export default () => compose([logger({
-  enabled: app.env !== 'test'
-}), helmet(), compress(), bodyParser(), cors()])
+export default () => {
+  const middlewares = [bodyParser()]
+
+  if (app.env !== 'test') {
+    middlewares.push(logger(), helmet(), compress(), cors())
+  }
+
+  return compose(middlewares)
+}

@@ -1,11 +1,12 @@
 import { IRouterContext } from 'koa-router'
 
-import Author from '../mongo/models/author'
+const authors = [
+  { firstName: 'John', lastName: 'Doe' },
+  { firstName: 'Joana', lastName: 'Doe' }
+]
 
 export const getAuthors = async (ctx: IRouterContext) => {
   try {
-    const authors = await Author.find().exec()
-
     ctx.body = authors
   } catch (err) {
     ctx.throw(err)
@@ -15,9 +16,8 @@ export const getAuthors = async (ctx: IRouterContext) => {
 export const createAuthor = async (ctx: IRouterContext) => {
   try {
     const { body } = ctx.request
-    const author = await Author.create(body)
 
-    ctx.body = author
+    ctx.body = body
   } catch (err) {
     ctx.throw(err)
   }
